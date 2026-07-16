@@ -2,13 +2,28 @@ document.addEventListener("DOMContentLoaded", function () {
    const createButton = document.getElementById("tpu-create-products");
    const countInput = document.getElementById("tpu-product-count");
    const container = document.getElementById("tpu-products-container");
-   createButton.addEventListener("click", function () {
-       container.innerHTML = "";
-       const total = parseInt(countInput.value);
-       for (let i = 1; i <= total; i++) {
-           container.appendChild(createCard(i));
-       }
-   });
+   createButton.addEventListener("click", function (e) {
+
+    e.preventDefault();
+
+    console.log("Create button clicked");
+
+    container.innerHTML = "";
+
+    const total = parseInt(countInput.value);
+
+    console.log("Total =", total);
+
+    for (let i = 1; i <= total; i++) {
+
+        console.log("Creating card", i);
+
+        container.appendChild(createCard(i));
+
+    }
+
+});
+ 
 });
 
 function createCard(index) {
