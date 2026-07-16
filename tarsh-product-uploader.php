@@ -8,7 +8,7 @@
 
  * Description: Bulk upload WooCommerce products with featured image, gallery image and manual product details.
 
- * Version: 1.0.2
+ * Version: 1.0.3
 
  * Author: Amod Goel
 
@@ -34,7 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 */
 
-define( 'TPU_VERSION', '1.0.2' );
+define( 'TPU_VERSION', '1.0.3' );
 
 define( 'TPU_PLUGIN_FILE', __FILE__ );
 
