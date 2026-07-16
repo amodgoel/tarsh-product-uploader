@@ -1,31 +1,38 @@
 <?php
-
 if ( ! defined( 'ABSPATH' ) ) {
-
-	exit;
-
+exit;
 }
-
 ?>
 <div class="wrap">
 <h1>Tarsh Product Uploader</h1>
 <p>
-
-		Bulk upload WooCommerce products with two images per product.
+       Bulk upload WooCommerce products with two images per product.
 </p>
 <hr>
-<p>
-<button class="button button-primary" id="tpu-add-product">
-
-			+ Add Product
+<table class="form-table">
+<tr>
+<th>Number of Products</th>
+<td>
+<input
+                   type="number"
+                   id="tpu-product-count"
+                   min="1"
+                   max="20"
+                   value="5">
+<button
+                   class="button button-primary"
+                   id="tpu-create-products">
+                   Create Product Cards
 </button>
-<button class="button" id="tpu-upload-all">
-
-			Upload All Products
+</td>
+</tr>
+</table>
+<br>
+<button
+       class="button"
+       id="tpu-upload-all">
+       Upload All Products
 </button>
-</p>
-<div id="tpu-products-container">
-<p>No products added yet.</p>
+<hr>
+<div id="tpu-products-container"></div>
 </div>
-</div>
- 
