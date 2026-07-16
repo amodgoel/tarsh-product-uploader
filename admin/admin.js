@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const countInput = document.getElementById("tpu-product-count");
 
     const container = document.getElementById("tpu-products-container");
+    const uploadButton = document.getElementById("tpu-upload-all");
 
     createButton.addEventListener("click", function (e) {
 
@@ -33,6 +34,23 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
     });
+
+    uploadButton.addEventListener("click", function () {
+
+    const products = [];
+
+    document.querySelectorAll(".tpu-card").forEach(function(card){
+
+        products.push(readProduct(card));
+
+    });
+
+    console.clear();
+
+    console.log(products);
+
+});
+ 
 
 });
 
@@ -248,4 +266,70 @@ function initializeImagePreview(card) {
     });
 
 }
+function readProduct(card){
+
+    const inputs = card.querySelectorAll("input");
+
+    const textareas = card.querySelectorAll("textarea");
+
+    const select = card.querySelector("select");
+
+    return {
+
+        featured_image:
+
+            card.querySelector(".featured-image").files[0] || null,
+
+        gallery_image:
+
+            card.querySelector(".gallery-image").files[0] || null,
+
+        name:
+
+            inputs[2].value,
+
+        regular_price:
+
+            inputs[3].value,
+
+        sale_price:
+
+            inputs[4].value,
+
+        weight:
+
+            inputs[5].value,
+
+        sku:
+
+            inputs[6].value,
+
+        category:
+
+            select.value,
+
+        tags:
+
+            inputs[7].value,
+
+        status:
+
+            inputs[8].checked
+
+                ? "draft"
+
+                : "publish",
+
+        short_description:
+
+            textareas[0].value,
+
+        description:
+
+            textareas[1].value
+
+    };
+
+}
+ 
  
