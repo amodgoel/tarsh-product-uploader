@@ -29,14 +29,43 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-    uploadButton.addEventListener("click", function () {
+    uploadButton.addEventListener("click", async function () {
 
-        const products = TPUReader.readAllProducts();
+    const products = TPUReader.readAllProducts();
 
-        console.clear();
+    uploadButton.disabled = true;
+    uploadButton.textContent = "Uploading...";
 
-        console.table(products);
+    try {
 
-    });
+        const response = await TPUAjax.uploadProducts(products);
+
+        console.log(response);
+
+        if (response.success) {
+
+            alert(
+                response.data.created.length +
+                " products created successfully."
+            );
+
+        } else {
+
+            alert(response.data.message);
+
+        }
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert("Upload failed.");
+
+    }
+
+    uploadButton.disabled = false;
+    uploadButton.textContent = "Upload All Products";
+
+});
 
 });
