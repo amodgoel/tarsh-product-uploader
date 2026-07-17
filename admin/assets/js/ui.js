@@ -234,11 +234,13 @@ Publish
 
         card.querySelector(".tpu-remove").addEventListener("click", function () {
 
-            card.remove();
+    card.remove();
 
-        });
+});
 
-        return card;
+TPUImages.initialize(card);
+
+return card;
 
     }
 
