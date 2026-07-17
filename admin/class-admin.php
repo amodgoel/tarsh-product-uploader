@@ -73,7 +73,7 @@ class TPU_Admin {
 		wp_enqueue_script(
     'tpu-admin',
     TPU_PLUGIN_URL . 'admin/assets/js/admin.js',
-    array( 'tpu-ui','tpu-images' ),
+    array( 'tpu-ui','tpu-images','tpu-reader' ),
     TPU_VERSION,
     true
 );
@@ -88,6 +88,13 @@ class TPU_Admin {
 		wp_enqueue_script(
     'tpu-images',
     TPU_PLUGIN_URL . 'admin/assets/js/images.js',
+    array(),
+    TPU_VERSION,
+    true
+);
+		wp_enqueue_script(
+    'tpu-reader',
+    TPU_PLUGIN_URL . 'admin/assets/js/reader.js',
     array(),
     TPU_VERSION,
     true
