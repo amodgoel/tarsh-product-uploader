@@ -71,18 +71,20 @@ class TPU_Admin {
 		);
 
 		wp_enqueue_script(
+    'tpu-admin',
+    TPU_PLUGIN_URL . 'admin/assets/js/admin.js',
+    array( 'tpu-ui' ),
+    TPU_VERSION,
+    true
+);
 
-			'tpu-admin',
-
-			TPU_PLUGIN_URL . 'admin/admin.js',
-
-			array(),
-
-			TPU_VERSION,
-
-			true
-
-		);
+		wp_enqueue_script(
+    'tpu-ui',
+    TPU_PLUGIN_URL . 'admin/assets/js/ui.js',
+    array(),
+    TPU_VERSION,
+    true
+);
 
 	}
 
